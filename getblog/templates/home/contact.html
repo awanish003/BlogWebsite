@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block contactactive %} active {% endblock contactactive %}
+
+
+{% block body %}
+
+<div class="container my-4">
+
+    <h4>Contact Us</h4>
+
+<form method="post" action="/contact">{% csrf_token %}
+    <div class="mb-3">
+        <label for="exampleInputName" class="form-label">Name </label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name Here...">
+        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter Your E-mail here...">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputPhone" class="form-label">Phone no.</label>
+        <input type="tel" class="form-control" id="name" name="phone" placeholder="Enter your Phone no. here...">
+        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+
+    <div class="mb-3">
+    <label for="exampleInputTextarea" class="form-label">How Can We Help You!</label>
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" name="content" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Comments</label>
+    </div>
+    </div>
+    
+    <button type="submit" class="btn btn-outline-success">Submit</button>
+  </form>
+
+</div>
+
+
+{% endblock %}
